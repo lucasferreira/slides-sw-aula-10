@@ -122,17 +122,17 @@ Quando uma requisição do tipo `DELETE` for efetuada para o _resource_ de **alu
 
 ## Recap: _Iniciando um projeto com Laravel_
 
-Utilizando o `composer`, vamos iniciar um novo projeto com o Laravel _(versão 5.1.x devido a compatibilidade com PHP 5.6)_:
+Utilizando o `composer`, vamos iniciar um novo projeto com o Laravel _(versão 5.8.x)_:
 
 ```bash
-composer create-project laravel/laravel projeto-api "5.1.*"
+composer create-project laravel/laravel projeto-api "5.8.*"
 ```
 
 --
 
 Após este comando, teremos uma nova pasta chamada `projeto-api` aonde nosso projeto irá evoluir.
 
-Maiores informações sobre instalação de um projeto acessem o link: <https://laravel.com/docs/5.1#installation>
+Maiores informações sobre instalação de um projeto acessem o link: <https://laravel.com/docs/5.8#installation>
 
 --
 
@@ -277,7 +277,7 @@ public function destroy($id)
 
 ### Controllers do Laravel e suas actions/resources
 
-Retornando a aula passada, não podemos esquecer que para cada controller, devemos preparar suas rotas de acesso. No arquivo `app/Http/routes.php` normalmente teríamos isto:
+Retornando a aula passada, não podemos esquecer que para cada controller, devemos preparar suas rotas de acesso. No arquivo `routes/api.php` normalmente teríamos isto:
 
 ```php
 <?php
@@ -583,7 +583,7 @@ Também será necessário que sempre que façamos uma _query_ para listar ou tra
 
 --
 
-Vale a pena dar uma olhada na documentação do Laravel sobre todos os tipos de ligação entre tabelas: <https://laravel.com/docs/5.1/eloquent-relationships>
+Vale a pena dar uma olhada na documentação do Laravel sobre todos os tipos de ligação entre tabelas: <https://laravel.com/docs/5.8/eloquent-relationships>
 
 ---
 
