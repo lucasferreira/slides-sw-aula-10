@@ -225,6 +225,12 @@ Nosso próximo passo será criar o **Controller** de cursos, usando o utilitári
 php artisan make:controller CursosController
 ```
 
+ou em Laravel mais atualizado / moderno:
+
+```bash
+php artisan make:controller CursosController --resource --model=Curso
+```
+
 --
 
 Um novo arquivo será criado em `app/Http/Controllers/CursosController.php`, aproveitando já iremos _"importar"_ o Model de Curso:
@@ -316,10 +322,10 @@ Usando a linha acima o Laravel irá montar para nós o seguinte esquema de rotas
 | GET       | /api/cursos              | index   | cursos.index   |
 | GET       | /api/cursos/create       | create  | cursos.create  |
 | POST      | /api/cursos              | store   | cursos.store   |
-| GET       | /api/cursos/{photo}      | show    | cursos.show    |
-| GET       | /api/cursos/{photo}/edit | edit    | cursos.edit    |
-| PUT/PATCH | /api/cursos/{photo}      | update  | cursos.update  |
-| DELETE    | /api/cursos/{photo}      | destroy | cursos.destroy |
+| GET       | /api/cursos/{curso}      | show    | cursos.show    |
+| GET       | /api/cursos/{curso}/edit | edit    | cursos.edit    |
+| PUT/PATCH | /api/cursos/{curso}      | update  | cursos.update  |
+| DELETE    | /api/cursos/{curso}      | destroy | cursos.destroy |
 
 ---
 
