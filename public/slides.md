@@ -122,10 +122,10 @@ Quando uma requisição do tipo `DELETE` for efetuada para o _resource_ de **alu
 
 ## Recap: _Iniciando um projeto com Laravel_
 
-Utilizando o `composer`, vamos iniciar um novo projeto com o Laravel _(versão 5.8.x)_:
+Utilizando o `composer`, vamos iniciar um novo projeto com o Laravel _(versão 6.x)_:
 
 ```bash
-composer create-project laravel/laravel projeto-api "5.8.*"
+composer create-project laravel/laravel projeto-api "6.*"
 ```
 
 --

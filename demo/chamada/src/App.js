@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 
 import "./App.css";
 
+const API_URL = "http://localhost/satc/web/slides-sw-aula-09/demo/projeto-laravel/public/api";
+
 function FormCurso({ status, onNewCurso }) {
   const [name, setName] = useState("");
 
@@ -11,7 +13,8 @@ function FormCurso({ status, onNewCurso }) {
         event.preventDefault();
         onNewCurso({ name });
         setName("");
-      }}>
+      }}
+    >
       <h4>Novo Curso</h4>
       <div className="form-group">
         <label htmlFor="name">Nome do Curso:</label>
@@ -40,9 +43,7 @@ export default function App() {
     setStatus("loading");
 
     try {
-      const cursosReq = await fetch(
-        `http://localhost/labs/satc/slides-sw-aula-09/demo/projeto-laravel/public/api/cursos`
-      );
+      const cursosReq = await fetch(`${API_URL}/cursos`);
       const cursos = await cursosReq.json();
       setCursos(cursos);
       setStatus("done");
@@ -55,17 +56,14 @@ export default function App() {
     setStatus("loading");
 
     try {
-      const cursosReq = await fetch(
-        `http://localhost/labs/satc/slides-sw-aula-09/demo/projeto-laravel/public/api/cursos`,
-        {
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          method: "POST",
-          body: JSON.stringify(dados),
-        }
-      );
+      const cursosReq = await fetch(`${API_URL}/cursos`, {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify(dados),
+      });
       const curso = await cursosReq.json();
       setCursos([...cursos, curso]);
       setStatus("done");
@@ -78,15 +76,12 @@ export default function App() {
     setStatus("loading");
 
     try {
-      const cursosReq = await fetch(
-        `http://localhost/labs/satc/slides-sw-aula-09/demo/projeto-laravel/public/api/cursos/${id}`,
-        {
-          headers: {
-            Accept: "application/json",
-          },
-          method: "DELETE",
-        }
-      );
+      const cursosReq = await fetch(`${API_URL}/cursos/${id}`, {
+        headers: {
+          Accept: "application/json",
+        },
+        method: "DELETE",
+      });
       const curso = await cursosReq.json();
       await carregaCursos();
     } catch (err) {
@@ -114,7 +109,8 @@ export default function App() {
                     if (window.confirm("Você confirma a exclusão deste curso?")) {
                       deletaCurso(curso.id);
                     }
-                  }}>
+                  }}
+                >
                   Remover
                 </a>
               </li>
